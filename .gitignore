@@ -1,6 +1,7 @@
-/cache
-/identities
-/store
-/extensions
+
+!cache/.gitkeep
+!identities/example.identity.dist
+!extensions/hooks.php
+!store/.gitkeep
 config.php
 !*.dist
