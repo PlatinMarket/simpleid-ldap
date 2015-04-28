@@ -1,4 +1,7 @@
-
+cache/
+identities/
+extensions/
+store/
 !cache/.gitkeep
 !identities/example.identity.dist
 !extensions/hooks.php
