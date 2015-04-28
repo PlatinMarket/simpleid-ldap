@@ -1,0 +1,6 @@
+/cache
+/identities
+/store
+/extensions
+config.php
+!*.dist
