@@ -21,6 +21,8 @@ class LDAP
 
     // Authenticate the against server the domain\username and password combination.
     public function authenticate($username, $password) {
+        if (!$this->serviceping($this->server, 389, 2)) return false; // Check Service if alive
+        
         $this->admin = $username;
         $this->password = $password;
 
@@ -37,8 +39,20 @@ class LDAP
         return false;
     }
 
+    private function serviceping($host, $port=389, $timeout=1) {
+        $op = fsockopen($host, $port, $errno, $errstr, $timeout);
+        if (!$op) {
+            return false; //DC is N/A
+        } else {
+            fclose($opanak); //explicitly close open socket connection
+            return true; //DC is up & running, we can safely connect with ldap_connect
+        }
+    }
+
     // Get an array of users or return false on error
     public function get_users() {       
+        if (!$this->serviceping($this->server, 389, 2)) return false; // Check Service if alive
+        
         if(!($ldap = ldap_connect($this->server))) return false;
 
         ldap_set_option($ldap, LDAP_OPT_REFERRALS, 0);
