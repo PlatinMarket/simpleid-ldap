@@ -249,7 +249,7 @@ msgstr ""
 
 #: www/page.inc.php:265
 msgid "Welcome"
-msgstr ""
+msgstr "Hoşgeldiniz"
 
 #: www/page.inc.php:266
 msgid "You are logged in as %uid (%identity)."
@@ -277,7 +277,7 @@ msgstr ""
 
 #: www/page.inc.php:294 www/user.inc.php:642
 msgid "Login Verification"
-msgstr ""
+msgstr "Giriş Doğrulaması"
 
 #: www/page.inc.php:307
 msgid "&lt;link&gt; tags"
@@ -401,7 +401,7 @@ msgstr ""
 
 #: www/user.inc.php:203 www/user.inc.php:224 www/user.inc.php:234
 msgid "SimpleID detected a potential security attack on your log in.  Please log in again."
-msgstr ""
+msgstr "Atak tespit edildi. Tekrar giriş yapmayı deneyin."
 
 #: www/user.inc.php:211
 msgid "You seem to be attempting to log in from another web page.  You must use this page to log in."
@@ -413,7 +413,7 @@ msgstr ""
 
 #: www/user.inc.php:248
 msgid "You need to supply the user name and the password in order to log in."
-msgstr ""
+msgstr "Giriş için kullanıcı adı ve parola sağlamanız gerekir."
 
 #: www/user.inc.php:256
 msgid "The user name or password is not correct."
@@ -437,7 +437,7 @@ msgstr ""
 
 #: www/user.inc.php:506
 msgid "<strong>WARNING:</strong>  Your password will be sent to SimpleID as plain text."
-msgstr "<strong>DİKKAT:</strong>  Şifreniz düz yazı olarak gönderilecektir."
+msgstr "Şifreniz düz yazı olarak gönderilecek."
 
 #: www/user.inc.php:513
 msgid "User name:"
@@ -449,11 +449,11 @@ msgstr "Şifre"
 
 #: www/user.inc.php:515
 msgid "Remember me on this computer for two weeks."
-msgstr ""
+msgstr "Beni hatırla <span class="text-muted">(2 hafta süreyle bu bilgisyarda)</span>"
 
 #: www/user.inc.php:525
 msgid "Log in"
-msgstr ""
+msgstr "Tamam"
 
 #: www/user.inc.php:526
 msgid "Log In"
@@ -543,13 +543,8 @@ msgstr ""
 
 #: www/user.inc.php:819
 msgid "Log out and log in as a different user"
-msgstr ""
+msgstr "Çıkış yap ve farklı bir kullanıcı olarak giriş yap"
 
 #: www/user.inc.php:822
 msgid "Log out"
-msgstr ""
-
-#: www/user.inc.php:822
-msgid "FuckOff"
-msgstr "SikGit"
-
+msgstr "Çıkış"

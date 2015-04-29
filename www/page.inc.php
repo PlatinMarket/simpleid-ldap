@@ -282,11 +282,11 @@ function _page_dashboard_otp_block() {
     if (isset($user['otp'])) {
         $html .= '<p>' . t('Login verification is <strong>enabled</strong>.') . '</p>';
         $html .= '<form action="' . $base_path . 'index.php" method="post" enctype="application/x-www-form-urlencoded"><input type="hidden" name="tk" value="'. get_form_token('dashboard_otp') . '"/>';
-        $html .= '<input type="hidden" name="q" value="otp"/><input type="submit" name="op" value="' . t('Disable') . '" /></form>';
+        $html .= '<input type="hidden" name="q" value="otp"/><input type="submit" name="op" value="' . t('Disable') . '" class="btn btn-success" /></form>';
     } else {
         $html .= '<p>' . t('Login verification is <strong>disabled</strong>. To enable login verification, click the button below.') . '</p>';
         $html .= '<form action="' . $base_path . 'index.php" method="post" enctype="application/x-www-form-urlencoded"><input type="hidden" name="tk" value="'. get_form_token('dashboard_otp') . '"/>';
-        $html .= '<input type="hidden" name="q" value="otp"/><input type="submit" name="op" value="' . t('Enable') . '" /></form>';
+        $html .= '<input type="hidden" name="q" value="otp"/><input type="submit" name="op" value="' . t('Enable') . '" class="btn btn-success" /></form>';
     }
     
     return array(array(
