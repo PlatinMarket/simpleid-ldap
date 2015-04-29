@@ -93,7 +93,7 @@
                             <h3 class="panel-title">{title}</h3>
                         </div>
                         <div class="panel-body">
-                            <form action="{base_path}index.php" method="post" enctype="application/x-www-form-urlencoded" id="login-form">
+                            <form action="{base_path}index.php" method="post" enctype="application/x-www-form-urlencoded" id="login-form" autocomplate="off">
                                 <input type="hidden" name="q" value="login"/><input name="destination" type="hidden" value="{destination}"/>
                                 <input type="hidden" name="mode" value="{mode}"/><input type="hidden" name="nonce" value="{nonce}" />
 
@@ -101,8 +101,14 @@
                                 <input type="hidden" name="digest" id="edit-digest" value="" />
                                 
                                 <div class="form-group">
-                                    <!-- BEGIN: input_uid --><input type="text" maxlength="60" name="name" id="edit-name" value="" autocapitalize="off" autocorrect="off" class="form-control required" {security_disabled} placeholder="{name_label}" /><!-- END: input_uid -->
-                                    <!-- BEGIN: fixed_uid --><input type="hidden" name="name" value="{uid}"/><input type="hidden" name="fixed_uid" value="1"/><div id="edit-name">{uid}</div><!-- END: fixed_uid -->
+                                    <!-- BEGIN: input_uid -->
+                                        <input type="text" maxlength="60" name="name" id="edit-name" value="" autocapitalize="off" autocorrect="off" class="form-control required" {security_disabled} placeholder="{name_label}" />
+                                    <!-- END: input_uid -->
+                                    <!-- BEGIN: fixed_uid -->
+                                        <input type="hidden" name="name" value="{uid}"/><input type="hidden" name="fixed_uid" value="1"/><div id="edit-name">{uid}</div>
+                                    <!-- END: fixed_uid -->
+                                    <input style="display:none" type="password" name="fakepasswordremembered">
+                                    <input style="display:none" type="text" name="fakeusernameremembered">
                                 </div>
                                 <div class="form-group">
                                     <input type="password" name="pass" id="edit-pass" size="60" class="form-control required" {security_disabled} placeholder="{pass_label}" />
