@@ -19,12 +19,11 @@
             <link rel="openid2.local_id" href="{local_id}" />
         <!-- END: local_id -->
         
+        <link rel="stylesheet" href="{base_path}html/components/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="{base_path}html/components/fontawesome/css/font-awesome.min.css" />
         <link rel="stylesheet" href="{base_path}html/simpleid.css" />
-        <style type="text/css" media="screen">
-            {css}
-        </style>
-        
-        <script src="{base_path}html/jquery.js" type="text/javascript"></script>
+       
+        <script src="{base_path}html/components/jquery/dist/jquery.min.js" type="text/javascript"></script>
         <script type="text/javascript">
         var l = {
             <!-- BEGIN: js_locale -->"{js_locale_label}": "{js_locale_text}",<!-- END: js_locale -->
@@ -43,7 +42,7 @@
         <div id="header"><div id="header-inner">
             <!-- BEGIN: nav_toggle --><div id="nav-toggle"><img src="{base_path}html/nav-toggle.png" /></div><!-- END: nav_toggle -->
             <div id="logo">
-                <h1><a href="http://simpleid.koinic.net/">SimpleID</a> <span class="version">{version}</span></h1>
+                <h1><a href="{base_path}">SimpleID</a> <span class="version">{version}</span></h1>
             </div>
             <!-- BEGIN: user -->
             <div id="user-toggle"><img src="{base_path}html/user-toggle.png" /></div>

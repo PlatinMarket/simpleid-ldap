@@ -7,4 +7,5 @@ store/
 !extensions/hooks.php
 !store/.gitkeep
 config.php
+www/html/components/
 !*.dist

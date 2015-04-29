@@ -1,0 +1,9 @@
+{
+  "name": "SimpleId-Ldap",
+  "private": true,
+  "dependencies": {
+    "jquery": "1.x",
+    "bootstrap": "3.x",
+    "fontawesome": "x"
+  }
+}

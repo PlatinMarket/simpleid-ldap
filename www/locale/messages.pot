@@ -449,7 +449,7 @@ msgstr ""
 
 #: www/user.inc.php:515
 msgid "Remember me on this computer for two weeks."
-msgstr ""
+msgstr "asdasdasd"
 
 #: www/user.inc.php:525
 msgid "Log in"
