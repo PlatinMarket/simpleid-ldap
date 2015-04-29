@@ -11,20 +11,20 @@
  */
 
 /**
-  * Ldap Base Uri
-  */
+ * Ldap Base Uri
+ */
 define("LDAP_URI", ""); 
-define("LDAP_BASE_DOMAIN", "");
 
 /**
-  * Ldap Base Dn
-  */
+ * Ldap Base Dn
+ */
 define("LDAP_BASE_DN", "");
 
 /**
-  * Ldap Search Dn
-  */
-define("LDAP_SEARCH_DN", "");
+ * Ldap Admin
+ */
+define("LDAP_ADMIN_DN", "");
+define("LDAP_ADMIN_PASSWORD", "");
 
 /**
  * Base URL.
