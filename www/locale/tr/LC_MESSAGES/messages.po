@@ -437,19 +437,19 @@ msgstr ""
 
 #: www/user.inc.php:506
 msgid "<strong>WARNING:</strong>  Your password will be sent to SimpleID as plain text."
-msgstr ""
+msgstr "<strong>DİKKAT:</strong>  Şifreniz düz yazı olarak gönderilecektir."
 
 #: www/user.inc.php:513
 msgid "User name:"
-msgstr ""
+msgstr "Kullanıcı Adı"
 
 #: www/user.inc.php:514
 msgid "Password:"
-msgstr ""
+msgstr "Şifre"
 
 #: www/user.inc.php:515
 msgid "Remember me on this computer for two weeks."
-msgstr "asdasdasd"
+msgstr ""
 
 #: www/user.inc.php:525
 msgid "Log in"
@@ -457,7 +457,7 @@ msgstr ""
 
 #: www/user.inc.php:526
 msgid "Log In"
-msgstr ""
+msgstr "Giriş"
 
 #: www/user.inc.php:530
 msgid "To verify your identity, enter the verification code."
@@ -548,3 +548,8 @@ msgstr ""
 #: www/user.inc.php:822
 msgid "Log out"
 msgstr ""
+
+#: www/user.inc.php:822
+msgid "FuckOff"
+msgstr "SikGit"
+

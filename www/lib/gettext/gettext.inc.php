@@ -40,6 +40,7 @@ if (!defined('LC_MESSAGES')) {
 
 require('streams.php');
 require('gettext.php');
+require('php-mo.php');
 
 
 // Variables
@@ -122,11 +123,23 @@ function _get_reader($domain=null, $category=5, $enable_cache=true) {
         $bound_path = isset($text_domains[$domain]->path) ?
           $text_domains[$domain]->path : './';
         $subpath = $LC_CATEGORIES[$category] ."/$domain.mo";
+        $subpath_po = $LC_CATEGORIES[$category] ."/$domain.po";
 
         $locale_names = get_list_of_locales($locale);
         $input = null;
         foreach ($locale_names as $locale) {
           $full_path = $bound_path . $locale . "/" . $subpath;
+          $full_path_po = $bound_path . $locale . "/" . $subpath_po;
+          
+
+          if (file_exists($full_path_po)) {
+            if (!file_exists($full_path) || (filemtime($full_path_po) > filemtime($full_path))) {
+              @phpmo_convert( $full_path_po, $full_path );
+              header('X-Local-Changed: True');
+            } else {
+              header('X-Local-Changed: False');
+            }
+          }
           if (file_exists($full_path)) {
             $input = new FileReader($full_path);
             break;
