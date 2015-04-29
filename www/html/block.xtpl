@@ -1,15 +1,10 @@
 <!-- :mode=html: $Id$ -->
 <!-- BEGIN: block -->
-<div class="block" id="{id}">
-    <div class="block-header">
-        <!-- BEGIN: links -->
-        <div class="block-header-links">
-            {links}
-        </div>
-        <!-- END: links -->
-        <h2>{title}</h2>
+<div class="block panel panel-default" id="{id}">
+    <div class="block-header panel-heading">
+        <h3 class="panel-title">{title}</h3>
     </div>
-    <div class="block-content">
+    <div class="block-content panel-body">
     {content}
     </div>
 </div>
