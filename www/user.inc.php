@@ -779,7 +779,7 @@ function _user_page_profile() {
     //$html = '<p>' . t('SimpleID may, with your consent, send the following information to sites which supports OpenID Connect.') . '</p>';    
     //$html .= '<p>' . t('To change these, <a href="!url">edit your identity file</a>.', array('!url' => 'http://simpleid.koinic.net/documentation/getting-started/setting-identity/identity-files')) . '</p>';
     
-    $html .= "<table><tr><th>" . t('Name') . "</th><th>" . t('Value') . "</th></tr>";
+    $html .= "<table class=\"table table-striped table-hover table-condensed\">";
     
     if (isset($user['user_info'])) {
         foreach ($user['user_info'] as $member => $value) {

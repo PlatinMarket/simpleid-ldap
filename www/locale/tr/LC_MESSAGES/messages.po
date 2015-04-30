@@ -171,8 +171,8 @@ msgid "Warning: This web site has not confirmed its identity and might be fraudu
 msgstr ""
 
 #: www/index.php:1057
-msgid "You are being logged into <strong class=\"realm\">@realm</strong>."
-msgstr ""
+msgid "You are being logged into <strong class="realm">@realm</strong>."
+msgstr "<i class="fa fa-external-link-square"></i> You are being logged into <strong class="realm">@realm</strong>."
 
 #: www/index.php:1058
 msgid "Automatically send my information to this site for any future requests."
