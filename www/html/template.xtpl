@@ -51,7 +51,7 @@
                 <span class="icon-bar"></span>
               </button>
               <!-- END: nav_toggle -->
-              <a class="navbar-brand" href="{base_path}">SimpleID <small>{version}</small></a>
+              <a class="navbar-brand" href="{base_path}">{provider} <small>{version}</small></a>
             </div>
             
             <div id="navbar" class="collapse navbar-collapse">

@@ -108,6 +108,7 @@ function simpleid_start() {
     locale_init(SIMPLEID_LOCALE);
 
     $xtpl = new XTemplate('html/template.xtpl');
+    $xtpl->assign('provider', SIMPLEID_PROVIDER);
     $xtpl->assign('version', SIMPLEID_VERSION);
     $xtpl->assign('base_path', get_base_path());
     $xtpl->assign('footer_doc', t('Documentation'));

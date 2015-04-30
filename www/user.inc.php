@@ -619,7 +619,7 @@ function user_otp_page() {
         $xtpl->assign('secret' . ($i + 1), substr($code, $i, 4));
     }
 
-    $url = 'otpauth://totp/SimpleID?secret=' . $code . '&digits=' . $params['digits'] . '&period=' . $params['period'];
+    $url = 'otpauth://totp/' . TOPT_PREFIX . '/' . $user['uid'] . '?secret=' . $code . '&digits=' . $params['digits'] . '&period=' . $params['period'];
     $xtpl->assign('qr', addslashes($url));
 
     $xtpl->assign('about_otp', t('Login verification adds an extra layer of protection to your account. When enabled, you will need to enter an additional security code whenever you log into SimpleID.'));

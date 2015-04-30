@@ -26,6 +26,17 @@ define("LDAP_BASE_DN", "");
 define("LDAP_ADMIN_DN", "");
 define("LDAP_ADMIN_PASSWORD", "");
 
+
+/**
+ * Logo Brand
+ */
+define("SIMPLEID_PROVIDER", "SimpleID");
+
+/**
+ * OPT Login Prefix
+ */
+define("TOPT_PREFIX", "");
+
 /**
  * Base URL.
  *
