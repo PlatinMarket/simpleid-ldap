@@ -4,6 +4,7 @@ extensions/
 store/
 !cache/.gitkeep
 !identities/example.identity.dist
+!identities/example.identity.ldap.dist
 !extensions/hooks.php
 !store/.gitkeep
 config.php

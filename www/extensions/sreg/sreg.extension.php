@@ -60,7 +60,6 @@ function sreg_response($assertion, $request) {
     $response = array();
     
     if ($version == OPENID_VERSION_2) $response['openid.ns.' . $alias] = OPENID_NS_SREG;
-    
     foreach ($fields as $field) {
         $value = _sreg_get_value($field);
         
@@ -105,7 +104,7 @@ function sreg_consent_form($request, $response, $rp) {
     $optional = (isset($request['optional'])) ? explode(',', $request['optional']) : array();
     $fields = array_merge($required, $optional);
     
-    if ((count($request)) && isset($user['sreg'])) {
+    if ((count($request)) && (isset($user['sreg']) || isset($user['user_info']))) {
         $xtpl2 = new XTemplate('extensions/sreg/sreg.xtpl');
         
         $xtpl2->assign('alias', openid_extension_alias(OPENID_NS_SREG));
@@ -147,7 +146,6 @@ function sreg_consent($form_request, &$response, &$rp) {
     
     $fields = array_keys(openid_extension_filter_request(OPENID_NS_SREG, $response));
     $alias = openid_extension_alias(OPENID_NS_SREG);
-    
     foreach ($fields as $field) {
         if (isset($response['openid.' . $alias . '.' . $field])) {
             if (!in_array($field, $form_request['sreg_consents'])) {
@@ -168,30 +166,7 @@ function sreg_consent($form_request, &$response, &$rp) {
  * @see hook_page_profile()
  */
 function sreg_page_profile() {
-    global $user;
-    $xtpl2 = new XTemplate('extensions/sreg/sreg.xtpl');
-    
-    if (isset($user['sreg'])) {
-        foreach ($user['sreg'] as $name => $value) {
-            $xtpl2->assign('name', htmlspecialchars($name, ENT_QUOTES, 'UTF-8'));
-            $xtpl2->assign('value', htmlspecialchars($value, ENT_QUOTES, 'UTF-8'));
-            $xtpl2->parse('user_page.sreg');
-        }
-    }
-    
-    $xtpl2->assign('sreg_data', t('SimpleID will send the following information to sites which supports the Simple Registration Extension.'));
-    $xtpl2->assign('connect_data', t('If you have also supplied OpenID Connect user information in your identity file, these may also be sent as part of this Extension.'));
-    $xtpl2->assign('edit_identity_file', t('To change these, <a href="!url">edit your identity file</a>.', array('!url' => 'http://simpleid.koinic.net/documentation/getting-started/setting-identity/identity-files')));
-    $xtpl2->assign('name_label', t('Name'));
-    $xtpl2->assign('value_label', t('Value'));
-    
-    $xtpl2->parse('user_page');
-    
-    return array(array(
-        'id' => 'sreg',
-        'title' => t('Simple Registration Extension'),
-        'content' => $xtpl2->text('user_page')
-    ));
+
 }
 
 
@@ -207,12 +182,13 @@ function sreg_page_profile() {
  */
 function _sreg_get_value($field) {
     global $user;
-    
     if (isset($user['sreg'][$field])) {
         return $user['sreg'][$field];
     } else {
         switch ($field) {
             case 'nickname':
+                if (isset($user['user_info'][$field])) return $user['user_info'][$field];
+                break;
             case 'email':
                 if (isset($user['user_info'][$field])) return $user['user_info'][$field];
                 break;
@@ -224,6 +200,12 @@ function _sreg_get_value($field) {
                 break;
             case 'gender':
                 if (isset($user['user_info']['gender'])) return strtoupper(substr($user['user_info']['gender'], 0, 1));
+                break;
+            case 'memberof':
+                if (isset($user['user_info'][$field])) return $user['user_info'][$field];
+                break;
+            case 'uid':
+                if (isset($user['user_info'][$field])) return $user['user_info'][$field];
                 break;
             case 'postcode':
                 if (isset($user['user_info']['address']['postal_code'])) return $user['user_info']['address']['postcal_code'];

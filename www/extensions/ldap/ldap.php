@@ -10,14 +10,11 @@ class LDAP
     private $baseDn = "";
     private $attributes = array("cn", "memberof", "samaccountname");
 
-    private $ldap = null;
     private function ldapConnect(){
-        if (!empty($this->ldap)) return $this->$ldap;
         if (!$this->serviceping($this->server, 389, 2)) return false; // Check Service if alive
         $ldap = @ldap_connect($this->server);
         if (!$ldap) return false;
-        $this->ldap = $ldap;
-        return $this->ldap;
+        return $ldap;
     }
     private function bindLdap($ldap, $username = null, $password = null){
         $username = $username ? $username : $this->adminDn;
@@ -47,31 +44,32 @@ class LDAP
 
         $result = $this->bindLdap($ldap, $username, $password);
         ldap_close($ldap);
-        return $result;
-        if ($result === false) return false;
-
-        if (!$this->bindLdap()) return false;
-        $sr = ldap_search($this->ldap, $this->domain, "(&(sAMAccountName=" . $username . "))", $this->attributes);
-        $info = ldap_get_entries($ldap, $sr);
         
-        $this->admin = $username;
-        $this->password = $password;
+        return $result;
+    }
 
-        if (empty($password)) return false;
-        $ldap = ldap_connect($this->server);
-        if (!$ldap) return false;
-        //ldap_set_option($ldap, LDAP_OPT_REFERRALS, 0);
-        //ldap_set_option($ldap, LDAP_OPT_PROTOCOL_VERSION, 3);
-        //$ldapbind = ldap_sasl_bind ($ldap, NULL, $password,'DIGEST-MD5',NULL,$username,NULL);
-        //print_r($ldapbind);
-        $rdn = 'OB=' . $username . ',OU=Users,' . $this->baseDn;
-        print_r($rdn);
-        $ldapbind = ldap_bind($ldap, $rdn, $password);
+    public function user_info($uid){
+        if (($ldap = $this->ldapConnect()) == false) return false;
 
-        if ($ldapbind) return true;
+        if (!$this->bindLdap($ldap)) return false;
+
+        $user = array('uid' => $uid);
+        $sr = ldap_search($ldap, $this->baseDn, "(&(sAMAccountName=" . $uid . ")(objectclass=person))");
+        $info = ldap_get_entries($ldap, $sr);
+
+        if ($info["count"] == 0) return false;
+
+        $temp_user = array();
+        foreach ($info[0] as $key => $value) if (is_string($key)) $temp_user[$key] = $value;
+
+        $user['cn'] = $temp_user['cn'][0];
+        $user['dn'] = $temp_user['distinguishedname'][0];
+        $user['mail'] = isset($temp_user['mail']) ? $temp_user['mail'][0] : "";
+        $user['memberof'] = array();
+        foreach ($temp_user['memberof'] as $key => $value) if (!is_string($key)) $user['memberof'][] = ldap_explode_dn($value, 1)[0];
 
         ldap_close($ldap);
-        return false;
+        return $user;
     }
 
     private function serviceping($host, $port=389, $timeout=1) {

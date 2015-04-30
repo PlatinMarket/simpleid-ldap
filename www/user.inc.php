@@ -775,10 +775,11 @@ function user_xrds($uid) {
 function _user_page_profile() {
     global $user;
     
-    $html = '<p>' . t('SimpleID may, with your consent, send the following information to sites which supports OpenID Connect.') . '</p>';    
-    $html .= '<p>' . t('To change these, <a href="!url">edit your identity file</a>.', array('!url' => 'http://simpleid.koinic.net/documentation/getting-started/setting-identity/identity-files')) . '</p>';
+    $html = "";
+    //$html = '<p>' . t('SimpleID may, with your consent, send the following information to sites which supports OpenID Connect.') . '</p>';    
+    //$html .= '<p>' . t('To change these, <a href="!url">edit your identity file</a>.', array('!url' => 'http://simpleid.koinic.net/documentation/getting-started/setting-identity/identity-files')) . '</p>';
     
-    $html .= "<table><tr><th>" . t('Member') . "</th><th>" . t('Value') . "</th></tr>";
+    $html .= "<table><tr><th>" . t('Name') . "</th><th>" . t('Value') . "</th></tr>";
     
     if (isset($user['user_info'])) {
         foreach ($user['user_info'] as $member => $value) {
@@ -840,7 +841,7 @@ function user_passauth_user_verify_credentials($uid, $credentials) {
     
     $test_user = user_load($uid);
     
-    if ($test_user == NULL) return false;
+    if ($test_user == NULL || !is_array($test_user) || !isset($test_user['pass'])) return false;
     
     $hash_function_salt = explode(':', $test_user['pass'], 3);
     

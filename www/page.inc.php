@@ -78,17 +78,16 @@ function page_profile() {
     user_header();
     page_nav();
     
-    $blocks = _page_discovery_block();
+    //$blocks = _page_discovery_block();
 
+    $blocks = array();
     $blocks = array_merge($blocks, _user_page_profile(), extension_invoke_all('page_profile'));
     $blocks = array_map('page_render_block', $blocks); 
     $xtpl->assign('blocks', implode($blocks));
-    $xtpl->parse('main.blocks');
     
-    $xtpl->assign(array('js_locale_label' => 'code', 'js_locale_text' => addslashes(t('<em>You need to set at least one of OpenID 1.x or OpenID 2 to generate the code.</em>'))));
+    $xtpl->parse('main.blocks');
     $xtpl->parse('main.js_locale');
     
-    $xtpl->assign('javascript', '<script src="' . get_base_path() . 'html/page-profile.js" type="text/javascript"></script>');
     $xtpl->assign('title', t('My Profile'));
     $xtpl->parse('main');
     $xtpl->out('main');
