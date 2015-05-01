@@ -499,10 +499,10 @@ function user_login_form($destination = '', $state = NULL, $fixed_uid = NULL, $m
         case 'credentials':
             $security_class = (SIMPLEID_ALLOW_AUTOCOMPLETE) ? 'allow-autocomplete ' : '';
             if (is_https()) {
-                $security_class .= 'secure';
+                $security_class .= 'lock';
                 $xtpl->assign('security_message', t('Secure login using <strong>HTTPS</strong>.'));
             } elseif (SIMPLEID_ALLOW_PLAINTEXT) {
-                $security_class .= 'unsecure';
+                $security_class .= 'unlock';
                 $xtpl->assign('security_message', t('<strong>WARNING:</strong>  Your password will be sent to SimpleID as plain text.'));
             }
             $xtpl->assign('security_class', $security_class);

@@ -18,27 +18,27 @@ msgstr ""
 
 #: www/common.inc.php:140
 msgid "An encrypted connection (HTTPS) is required for this page."
-msgstr ""
+msgstr "Bu sayfa için şifreli bağlantı (HTTPS) gereklidir."
 
 #: www/extensions/ax/ax.extension.php:195
 msgid "SimpleID will also be sending the following information to the site."
-msgstr ""
+msgstr "Siteye ayrıca şu bilgileri göndereceğiz."
 
 #: www/extensions/ax/ax.extension.php:196
 #: www/extensions/ax/ax.extension.php:267
 msgid "Type URL"
-msgstr ""
+msgstr "URL yazın"
 
 #: www/extensions/ax/ax.extension.php:197
 #: www/extensions/ax/ax.extension.php:268
 #: www/extensions/sreg/sreg.extension.php:134
 #: www/extensions/sreg/sreg.extension.php:186 www/user.inc.php:781
 msgid "Value"
-msgstr ""
+msgstr "Değer"
 
 #: www/extensions/ax/ax.extension.php:203
 msgid "This web site requested to store information about you on SimpleID. Sadly, SimpleID does not support this feature."
-msgstr ""
+msgstr "Bu web sitesi, sizinle ilgili bilgileri depolamak için istedi. Ne yazık ki bu özelliği desteklemiyoruz."
 
 #: www/extensions/ax/ax.extension.php:265
 msgid "SimpleID will send the following information to sites which supports the Attribute Exchange Extension.  If you have also supplied OpenID Connect user information in your identity, or have the Simple Registration Extension installed, these may also be sent as part of this Extension."
@@ -46,7 +46,7 @@ msgstr ""
 
 #: www/extensions/ax/ax.extension.php:266
 #: www/extensions/sreg/sreg.extension.php:184 www/user.inc.php:779
-msgid "To change these, <a href=\"!url\">edit your identity file</a>."
+msgid "To change these, <a href="!url">edit your identity file</a>."
 msgstr ""
 
 #: www/extensions/ax/ax.extension.php:274
@@ -63,12 +63,12 @@ msgstr ""
 
 #: www/extensions/sreg/sreg.extension.php:132
 msgid "SimpleID will also be sending the following registration information to the site."
-msgstr ""
+msgstr "Ayrıca siteye aşağıdaki kayıt bilgilerini göndereceğiz."
 
 #: www/extensions/sreg/sreg.extension.php:133
 #: www/extensions/sreg/sreg.extension.php:185
 msgid "Name"
-msgstr ""
+msgstr "Ad"
 
 #: www/extensions/sreg/sreg.extension.php:182
 msgid "SimpleID will send the following information to sites which supports the Simple Registration Extension."
@@ -152,7 +152,7 @@ msgstr ""
 #: www/index.php:1031 www/index.php:1112 www/user.inc.php:186
 #: www/user.inc.php:485
 msgid "Cancel"
-msgstr ""
+msgstr "İptal"
 
 #: www/index.php:1036
 msgid "Unable to log into <strong class=\"realm\">@realm</strong>."
@@ -172,15 +172,15 @@ msgstr ""
 
 #: www/index.php:1057
 msgid "You are being logged into <strong class="realm">@realm</strong>."
-msgstr "<i class="fa fa-external-link-square"></i> You are being logged into <strong class="realm">@realm</strong>."
+msgstr "<strong class="realm">@realm</strong> adresinde oturum açmak üzeresin."
 
 #: www/index.php:1058
 msgid "Automatically send my information to this site for any future requests."
-msgstr ""
+msgstr "Gelecekte bu site için bilgilerime erişimi otomatikleştir."
 
 #: www/index.php:1059
 msgid "OK"
-msgstr ""
+msgstr "Tamam"
 
 #: www/index.php:1066 www/page.inc.php:186
 msgid "This web site has not confirmed its identity and might be fraudulent."
@@ -209,7 +209,7 @@ msgstr ""
 
 #: www/page.inc.php:57 www/page.inc.php:222
 msgid "Dashboard"
-msgstr ""
+msgstr "Anasayfa"
 
 #: www/page.inc.php:88
 msgid "<em>You need to set at least one of OpenID 1.x or OpenID 2 to generate the code.</em>"
@@ -217,7 +217,7 @@ msgstr ""
 
 #: www/page.inc.php:92 www/page.inc.php:223
 msgid "My Profile"
-msgstr ""
+msgstr "Profilim"
 
 #: www/page.inc.php:149
 msgid "Your preferences have been saved."
@@ -229,23 +229,23 @@ msgstr ""
 
 #: www/page.inc.php:179
 msgid "Last access"
-msgstr ""
+msgstr "Son erişim"
 
 #: www/page.inc.php:180
 msgid "Automatic"
-msgstr ""
+msgstr "Otomatik"
 
 #: www/page.inc.php:181
 msgid "Remove"
-msgstr ""
+msgstr "Kaldır"
 
 #: www/page.inc.php:182
 msgid "Submit"
-msgstr ""
+msgstr "Seçimleri uygula"
 
 #: www/page.inc.php:189 www/page.inc.php:224
 msgid "My Sites"
-msgstr ""
+msgstr "Bağlantılarım"
 
 #: www/page.inc.php:265
 msgid "Welcome"
@@ -253,27 +253,28 @@ msgstr "Hoşgeldiniz"
 
 #: www/page.inc.php:266
 msgid "You are logged in as %uid (%identity)."
-msgstr ""
+msgstr "<strong>%uid</strong> adıyla <strong>%identity</strong> adresine giriş yaptınız."
 
 #: www/page.inc.php:280 www/user.inc.php:625
 msgid "Login verification adds an extra layer of protection to your account. When enabled, you will need to enter an additional security code whenever you log into SimpleID."
-msgstr ""
+msgstr "<strong>Giriş doğrulama</strong>, hesabınıza ekstra bir koruma katmanı ekler. Etkin olduğunda, her bir giriş için sizden ek olarak güvenlik kodunu girmenizi isteyeceğiz."
+
 
 #: www/page.inc.php:283
 msgid "Login verification is <strong>enabled</strong>."
-msgstr ""
+msgstr "Giriş doğrulaması <strong>aktif</strong>"
 
 #: www/page.inc.php:285 www/user.inc.php:571
 msgid "Disable"
-msgstr ""
+msgstr "Pasifleştir"
 
 #: www/page.inc.php:287
 msgid "Login verification is <strong>disabled</strong>. To enable login verification, click the button below."
-msgstr ""
+msgstr "Giriş doğrulaması <strong>pasif</strong>. Etkinleştirmek için aşağıdaki butona tıklayın."
 
 #: www/page.inc.php:289
 msgid "Enable"
-msgstr ""
+msgstr "Etkinleştir"
 
 #: www/page.inc.php:294 www/user.inc.php:642
 msgid "Login Verification"
@@ -425,15 +426,15 @@ msgstr ""
 
 #: www/user.inc.php:279 www/user.inc.php:595
 msgid "The verification code is not correct."
-msgstr ""
+msgstr "Doğrulama kodunu yanlış girdiniz."
 
 #: www/user.inc.php:443
 msgid "You have been logged out."
-msgstr ""
+msgstr "Çıkış yaptınız."
 
 #: www/user.inc.php:503
 msgid "Secure login using <strong>HTTPS</strong>."
-msgstr ""
+msgstr "Güvenli giriş (HTTPS)"
 
 #: www/user.inc.php:506
 msgid "<strong>WARNING:</strong>  Your password will be sent to SimpleID as plain text."
@@ -461,47 +462,47 @@ msgstr "Giriş"
 
 #: www/user.inc.php:530
 msgid "To verify your identity, enter the verification code."
-msgstr ""
+msgstr "Kimliğinizi doğrulamak için, doğrulama kodunu girin."
 
 #: www/user.inc.php:531
-msgid "If you have lost your verification code, you can <a href=\"!url\">recover your account</a>."
-msgstr ""
+msgid "If you have lost your verification code, you can <a href="!url">recover your account</a>."
+msgstr "Eğer doğrulama kodunuzu kaybedettiyseniz, <a href="!url">tıklayın</a>."
 
 #: www/user.inc.php:535 www/user.inc.php:638
 msgid "Verification code:"
-msgstr ""
+msgstr "Doğrulama kodu"
 
 #: www/user.inc.php:539 www/user.inc.php:585 www/user.inc.php:639
 msgid "Verify"
-msgstr ""
+msgstr "Doğrula"
 
 #: www/user.inc.php:540
 msgid "Enter Verification Code"
-msgstr ""
+msgstr "Doğrulama kodu girin"
 
 #: www/user.inc.php:593
 msgid "You need to enter the verification code to complete enabling login verification."
 msgstr ""
 
 #: www/user.inc.php:626
-msgid "<strong>WARNING:</strong> If you enable login verification and lose your authenticator app, you will need to <a href=\"!url\">edit your identity file manually</a> before you can log in again."
-msgstr ""
+msgid "<strong>WARNING:</strong> If you enable login verification and lose your authenticator app, you will need to <a href="!url">edit your identity file manually</a> before you can log in again."
+msgstr "Eğer giriş doğrulamasını etkinleştirip, kimlik doğrulayıcı uygulamasını kaybederseniz tekrar giriş yapıp, kimlik dosyasını düzenlemeniz gerekir."
 
 #: www/user.inc.php:630
 msgid "To set up login verification, following these steps."
-msgstr ""
+msgstr "Giriş doğrulamasını tamamlamak için aşağıdaki adımları takip edin."
 
 #: www/user.inc.php:631
 msgid "Download an authenticator app that supports TOTP for your smartphone, such as Google Authenticator."
-msgstr ""
+msgstr "Akıllı telefonunuza <strong>Google Authenticator</strong> gibi <strong>TOTP</strong> destekleyen bir uygulama indirin."
 
 #: www/user.inc.php:632
-msgid "Add your SimpleID account to authenticator app using this key.  If you are viewing this page on your smartphone you can use <a href=\"!url\">this link</a> or scan the QR code to add your account."
-msgstr ""
+msgid "Add your SimpleID account to authenticator app using this key.  If you are viewing this page on your smartphone you can use <a href="!url">this link</a> or scan the QR code to add your account."
+msgstr "İndirdiğiniz uygulamayla yandaki <strong>QR</strong> kodunu taratarak veya yandaki <strong>anahtarı</strong> yazarak doğrulama kodu oluşturun. Eğer akıllı telefonumuzdan bu sayfayı görüntülüyorsanız <a href="!url">buraya</a> tıklayınız."
 
 #: www/user.inc.php:635
 msgid "To check that your account has been added properly, enter the verification code from your phone into the box below, and click Verify."
-msgstr ""
+msgstr "Hesabınızın düzgün eklenmiş olduğunu kontrol etmek için, yandaki kutuya telefonunuzdaki doğrulama kodunu girin ve "Doğrula" ya basın."
 
 #: www/user.inc.php:661
 msgid "User Page"
@@ -539,7 +540,7 @@ msgstr ""
 
 #: www/user.inc.php:799
 msgid "OpenID Connect"
-msgstr ""
+msgstr "OpenID Bilgilerim"
 
 #: www/user.inc.php:819
 msgid "Log out and log in as a different user"
