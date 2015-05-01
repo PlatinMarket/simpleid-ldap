@@ -50,7 +50,10 @@
                 <span class="icon-bar"></span>
               </button>
               <!-- END: nav_toggle -->
-              <a class="navbar-brand" href="{nav_base}">OpenID <small>{version}</small></a>
+<<<<<<< HEAD
+=======
+              <a class="navbar-brand" href="{base_path}">{provider} <small>{version}</small></a>
+>>>>>>> origin/master
             </div>
             
             <div id="navbar" class="collapse navbar-collapse">
