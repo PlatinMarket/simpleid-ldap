@@ -57,5 +57,5 @@ define_default('SIMPLEID_LOCALE', 'en');
 define_default('SIMPLEID_LOGFILE', '');
 define_default('SIMPLEID_LOGLEVEL', 4);
 
-if (function_exists('date_default_timezone_set')) date_default_timezone_set(@date_default_timezone_get());
+if (function_exists('date_default_timezone_set')) date_default_timezone_set('Europe/Istanbul');
 ?>
